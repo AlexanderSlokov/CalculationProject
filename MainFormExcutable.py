@@ -244,15 +244,48 @@ class Ui_MainWindowExcutable(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
+    #Cho duoc viet them
         self.malay_value_followHK_label.setText(str(float(0.8)))
         self.player_malay_value_followHK_label.setText(str(float(-0.94)))
+
         self.banker_plus_1000_pushButton.clicked.connect(self.plus_1000)
+        self.player_plus_1000_pushButton.clicked.connect(self.player_plus_1000)
+
+        self.banker_apply_pushButton.clicked.connect(self.malay_to_hk)
+        self.player_apply_pushButton.clicked.connect(self.player_malay_to_hk)
 
 
     def plus_1000(self):
         base_sum = int(self.betRate_banker_Edit.text())
         sum = base_sum + 1000
         self.betRate_banker_Edit.setText(str(sum))
+
+    def player_plus_1000(self):
+        base_sum = int(self.betRate_banker_player_Edit.text())
+        sum = base_sum + 1000
+        self.betRate_banker_player_Edit.setText(str(sum))
+
+    # ti le hk, phai bam nut apply moi trigger duoc event tinh tien
+    def malay_to_hk(self):
+        malay = float(self.malay_value_followHK_label.text())
+        if malay < 0:
+            hk = 100 + 100 * (1 + malay)
+        else:
+            hk = 100 * malay
+
+        self.hk_banker_input_Edit.setText(str(hk))
+        self.banker_total_label.setText(str(self.betRate_banker_Edit.text()))
+
+    # ti le hk ben phia player, phai bam nut apply cua player moi trigger duoc event tinh tien
+    def player_malay_to_hk(self):
+        player_malay = float(self.player_malay_value_followHK_label.text())
+        if player_malay < 0:
+            player_hk = 100 + 100 * (1 + player_malay)
+        else:
+            player_hk = 100 * player_malay
+
+        self.hk_player_input_Edit.setText(str(player_hk))
+        self.player_total_label.setText(str(self.betRate_banker_player_Edit.text()))
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -293,6 +326,7 @@ class Ui_MainWindowExcutable(object):
 
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindowExcutable()
