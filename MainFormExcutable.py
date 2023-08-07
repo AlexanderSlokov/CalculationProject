@@ -2,10 +2,8 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtWidgets import QApplication, QMainWindow
 import sys
 
-from MainForm import Ui_MainWindow
 
-
-class Ui_MainWindow(object):
+class Ui_MainWindowExcutable(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1253, 783)
@@ -246,37 +244,15 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-        self.banker_apply_pushButton.click(self.banker_plus_money)
+        self.malay_value_followHK_label.setText(str(float(0.8)))
+        self.player_malay_value_followHK_label.setText(str(float(-0.94)))
+        self.banker_plus_1000_pushButton.clicked.connect(self.plus_1000)
 
-    def banker_plus_money(self):
-        price = {
-            "oneThousand": 1000,
-            "twoThousand": 2000,
-            "threeThousand": 3000,
-            "fourThousand": 4000,
-            "fiveThousand": 5000,
-        }
-        base_money = 0
-        sum_money = 0
-        plus_1000_count = 0
-        plus_2000_count = 0
-        plus_3000_count = 0
-        plus_4000_count = 0
-        plus_5000_count = 0
 
-        if self.banker_plus_1000_pushButton.clicked:
-            plus_1000_count += 1
-        if self.banker_plus_2000_pushButton.clicked:
-            plus_2000_count += 1
-        if self.banker_plus_3000_pushButton.clicked:
-            plus_3000_count += 1
-        if self.banker_plus_4000_pushButton.clicked:
-            plus_4000_count += 1
-        if self.banker_plus_5000_pushButton.clicked:
-            plus_5000_count += 1
-
-        sum_money = base_money + (1000*plus_1000_count) + (1000*plus_1000_count) + (1000*plus_1000_count) + (1000*plus_1000_count) + (1000*plus_1000_count)
-
+    def plus_1000(self):
+        base_sum = int(self.betRate_banker_Edit.text())
+        sum = base_sum + 1000
+        self.betRate_banker_Edit.setText(str(sum))
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -314,11 +290,12 @@ class Ui_MainWindow(object):
         self.player_plus_5000_pushButton.setText(_translate("MainWindow", "5000 $"))
         self.player_plus_4000_pushButton.setText(_translate("MainWindow", "4000 $"))
 
-    if __name__ == "__main__":
-        import sys
-        app = QtWidgets.QApplication(sys.argv)
-        MainWindow = QtWidgets.QMainWindow()
-        ui = Ui_MainWindow()
-        ui.setupUi(MainWindow)
-        MainWindow.show()
-        sys.exit(app.exec())
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindowExcutable()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec())
