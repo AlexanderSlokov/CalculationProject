@@ -1,7 +1,5 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
-from PyQt6.QtWidgets import QApplication, QMainWindow
-import sys
-
+from PyQt6.QtCore import pyqtSignal, QObject
 
 class Ui_MainWindowExcutable(object):
     def setupUi(self, MainWindow):
@@ -10,16 +8,9 @@ class Ui_MainWindowExcutable(object):
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label_20 = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label_20.setGeometry(QtCore.QRect(630, 80, 201, 61))
+        self.label_20.setGeometry(QtCore.QRect(640, 140, 201, 61))
         self.label_20.setStyleSheet("font: 18pt \"MS Shell Dlg 2\";")
         self.label_20.setObjectName("label_20")
-        self.banker_apply_pushButton = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.banker_apply_pushButton.setGeometry(QtCore.QRect(220, 650, 191, 81))
-        self.banker_apply_pushButton.setAutoFillBackground(False)
-        self.banker_apply_pushButton.setStyleSheet("background-color: rgb(166, 0, 3);\n"
-"font: 16pt \"MS Shell Dlg 2\";\n"
-"color: rgb(255, 255, 255);")
-        self.banker_apply_pushButton.setObjectName("banker_apply_pushButton")
         self.banker_groupBox = QtWidgets.QGroupBox(parent=self.centralwidget)
         self.banker_groupBox.setGeometry(QtCore.QRect(20, 220, 591, 411))
         self.banker_groupBox.setAutoFillBackground(False)
@@ -118,7 +109,7 @@ class Ui_MainWindowExcutable(object):
 "color: rgb(255, 255, 255);")
         self.banker_plus_4000_pushButton.setObjectName("banker_plus_4000_pushButton")
         self.player_apply_pushButton = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.player_apply_pushButton.setGeometry(QtCore.QRect(810, 650, 191, 81))
+        self.player_apply_pushButton.setGeometry(QtCore.QRect(530, 640, 191, 81))
         self.player_apply_pushButton.setAutoFillBackground(False)
         self.player_apply_pushButton.setStyleSheet("background-color: rgb(0, 147, 29);\n"
 "font: 16pt \"MS Shell Dlg 2\";\n"
@@ -182,7 +173,7 @@ class Ui_MainWindowExcutable(object):
         self.label_18.setStyleSheet("color: rgb(10, 176, 37)")
         self.label_18.setObjectName("label_18")
         self.betRate_banker_player_Edit = QtWidgets.QLineEdit(parent=self.player_groupBox)
-        self.betRate_banker_player_Edit.setGeometry(QtCore.QRect(250, 270, 141, 31))
+        self.betRate_banker_player_Edit.setGeometry(QtCore.QRect(250, 280, 141, 31))
         self.betRate_banker_player_Edit.setObjectName("betRate_banker_player_Edit")
         self.player_malay_value_followHK_label = QtWidgets.QLabel(parent=self.player_groupBox)
         self.player_malay_value_followHK_label.setGeometry(QtCore.QRect(250, 200, 261, 41))
@@ -226,8 +217,12 @@ class Ui_MainWindowExcutable(object):
         self.image_label.setText("")
         self.image_label.setObjectName("image_label")
         self.lineEdit = QtWidgets.QLineEdit(parent=self.centralwidget)
-        self.lineEdit.setGeometry(QtCore.QRect(810, 90, 201, 41))
+        self.lineEdit.setGeometry(QtCore.QRect(820, 150, 201, 41))
         self.lineEdit.setObjectName("lineEdit")
+        self.fix_malay_ratio_pushButton = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.fix_malay_ratio_pushButton.setGeometry(QtCore.QRect(1040, 157, 141, 31))
+        self.fix_malay_ratio_pushButton.setStyleSheet("background-color: rgb(61, 227, 49);")
+        self.fix_malay_ratio_pushButton.setObjectName("fix_malay_ratio_pushButton")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1253, 26))
@@ -240,22 +235,18 @@ class Ui_MainWindowExcutable(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-    #Fixed codes
-        #variable
-        max_money_size = int(self.lineEdit.text())
-
-        #Fixed start variable
+        # Fixed codes
+        # variable
         self.malay_value_followHK_label.setText(str(float(0.8)))
         self.player_malay_value_followHK_label.setText(str(float(-0.94)))
 
-        #Plus buttons events
+        # Plus buttons events
         self.banker_plus_1000_pushButton.clicked.connect(self.plus_1000)
         self.player_plus_1000_pushButton.clicked.connect(self.player_plus_1000)
 
-        #Apply buttons events
-        self.banker_apply_pushButton.clicked.connect(self.malay_to_hk)
+        # Apply buttons events
         self.player_apply_pushButton.clicked.connect(self.player_malay_to_hk)
-
+        self.fix_malay_ratio_pushButton.clicked.connect(self.fix_ratios)
 
     def plus_1000(self):
         base_sum = int(self.betRate_banker_Edit.text())
@@ -267,9 +258,11 @@ class Ui_MainWindowExcutable(object):
         sum = base_sum + 1000
         self.betRate_banker_player_Edit.setText(str(sum))
 
-    # ti le hk, phai bam nut apply moi trigger duoc event tinh tien
-    def malay_to_hk(self):
+    # ti le hk ben theo maylay, phai bam nut apply cua player moi trigger duoc event tinh tien
+    def player_malay_to_hk(self):
+        player_malay = float(self.player_malay_value_followHK_label.text())
         malay = float(self.malay_value_followHK_label.text())
+
         if malay < 0:
             hk = 100 + 100 * (1 + malay)
         else:
@@ -278,9 +271,6 @@ class Ui_MainWindowExcutable(object):
         self.hk_banker_input_Edit.setText(str(hk))
         self.banker_total_label.setText(str(self.betRate_banker_Edit.text()))
 
-    # ti le hk ben phia player, phai bam nut apply cua player moi trigger duoc event tinh tien
-    def player_malay_to_hk(self):
-        player_malay = float(self.player_malay_value_followHK_label.text())
         if player_malay < 0:
             player_hk = 100 + 100 * (1 + player_malay)
         else:
@@ -289,11 +279,18 @@ class Ui_MainWindowExcutable(object):
         self.hk_player_input_Edit.setText(str(player_hk))
         self.player_total_label.setText(str(self.betRate_banker_player_Edit.text()))
 
+    def fix_ratios(self):
+        max_money = int(self.lineEdit.text())
+        malay_ratio_value = float(self.player_malay_value_followHK_label.text())
+        betRate_difference = int(self.betRate_banker_player_Edit.text()) - int(self.betRate_banker_Edit.text())
+        ratio_fix = (betRate_difference / max_money) * 0.01
+        fixed = malay_ratio_value - ratio_fix
+        self.player_malay_value_followHK_label.setText(str(float(fixed)))
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label_20.setText(_translate("MainWindow", "MAX $ SIZE:"))
-        self.banker_apply_pushButton.setText(_translate("MainWindow", "APPLY"))
         self.banker_groupBox.setTitle(_translate("MainWindow", "BANKER"))
         self.label_2.setText(_translate("MainWindow", "----Banker Odds----"))
         self.label_3.setText(_translate("MainWindow", "Hong Kong:"))
@@ -321,6 +318,7 @@ class Ui_MainWindowExcutable(object):
         self.player_plus_2000_pushButton.setText(_translate("MainWindow", "2000 $"))
         self.player_plus_5000_pushButton.setText(_translate("MainWindow", "5000 $"))
         self.player_plus_4000_pushButton.setText(_translate("MainWindow", "4000 $"))
+        self.fix_malay_ratio_pushButton.setText(_translate("MainWindow", "Config Malaysia ratio"))
 
 
 if __name__ == "__main__":
