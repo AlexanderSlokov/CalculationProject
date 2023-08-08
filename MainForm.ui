@@ -14,22 +14,6 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="max_MoneySize_label">
-    <property name="geometry">
-     <rect>
-      <x>810</x>
-      <y>80</y>
-      <width>171</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 18pt &quot;MS Shell Dlg 2&quot;;</string>
-    </property>
-    <property name="text">
-     <string>MONEY SIZE</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_20">
     <property name="geometry">
      <rect>
@@ -98,22 +82,27 @@ color: rgb(255, 255, 255);</string>
     <widget class="QLabel" name="label_2">
      <property name="geometry">
       <rect>
-       <x>20</x>
+       <x>150</x>
        <y>100</y>
-       <width>161</width>
+       <width>231</width>
        <height>41</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>13</pointsize>
+       <family>MS Shell Dlg 2</family>
+       <pointsize>16</pointsize>
+       <weight>9</weight>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(156, 30, 21);</string>
+      <string notr="true">color: rgb(156, 30, 21);
+font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
      </property>
      <property name="text">
-      <string>Banker Odds:</string>
+      <string>----Banker Odds----</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_3">
@@ -174,27 +163,6 @@ color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
       <string>Banker total number</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="banker_odds_label">
-     <property name="geometry">
-      <rect>
-       <x>250</x>
-       <y>100</y>
-       <width>261</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>13</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true"/>
-     </property>
-     <property name="text">
-      <string>Banker odds number</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_7">
@@ -395,7 +363,7 @@ color: rgb(255, 255, 255);</string>
    <widget class="QGroupBox" name="player_groupBox">
     <property name="geometry">
      <rect>
-      <x>630</x>
+      <x>640</x>
       <y>220</y>
       <width>591</width>
       <height>411</height>
@@ -420,22 +388,27 @@ color: rgb(255, 255, 255);</string>
     <widget class="QLabel" name="label_8">
      <property name="geometry">
       <rect>
-       <x>20</x>
+       <x>140</x>
        <y>100</y>
-       <width>161</width>
+       <width>241</width>
        <height>41</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>13</pointsize>
+       <family>MS Shell Dlg 2</family>
+       <pointsize>16</pointsize>
+       <weight>9</weight>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(10, 176, 37)</string>
+      <string notr="true">color: rgb(10, 176, 37);
+font: 75 16pt &quot;MS Shell Dlg 2&quot;;</string>
      </property>
      <property name="text">
-      <string>Banker Odds:</string>
+      <string>----Banker Odds----</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_9">
@@ -496,24 +469,6 @@ color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
       <string>Player total number</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="player_odds_label">
-     <property name="geometry">
-      <rect>
-       <x>250</x>
-       <y>100</y>
-       <width>261</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>13</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Player odds number</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_13">
@@ -704,6 +659,16 @@ color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string/>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>90</y>
+      <width>201</width>
+      <height>41</height>
+     </rect>
     </property>
    </widget>
   </widget>
