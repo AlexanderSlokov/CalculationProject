@@ -1,6 +1,7 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtCore import pyqtSignal, QObject
 
+
 class Ui_MainWindowExcutable(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -29,7 +30,7 @@ class Ui_MainWindowExcutable(object):
         font.setWeight(9)
         self.label_2.setFont(font)
         self.label_2.setStyleSheet("color: rgb(156, 30, 21);\n"
-"font: 75 16pt \"MS Shell Dlg 2\";")
+                                   "font: 75 16pt \"MS Shell Dlg 2\";")
         self.label_2.setObjectName("label_2")
         self.label_3 = QtWidgets.QLabel(parent=self.banker_groupBox)
         self.label_3.setGeometry(QtCore.QRect(20, 150, 161, 41))
@@ -81,39 +82,39 @@ class Ui_MainWindowExcutable(object):
         self.banker_plus_1000_pushButton = QtWidgets.QPushButton(parent=self.banker_groupBox)
         self.banker_plus_1000_pushButton.setGeometry(QtCore.QRect(20, 340, 93, 28))
         self.banker_plus_1000_pushButton.setStyleSheet("background-color: rgb(166, 0, 3);\n"
-"font: 12pt \"MS Shell Dlg 2\";\n"
-"color: rgb(255, 255, 255);")
+                                                       "font: 12pt \"MS Shell Dlg 2\";\n"
+                                                       "color: rgb(255, 255, 255);")
         self.banker_plus_1000_pushButton.setObjectName("banker_plus_1000_pushButton")
         self.banker_plus_2000_pushButton = QtWidgets.QPushButton(parent=self.banker_groupBox)
         self.banker_plus_2000_pushButton.setGeometry(QtCore.QRect(130, 340, 93, 28))
         self.banker_plus_2000_pushButton.setStyleSheet("background-color: rgb(166, 0, 3);\n"
-"font: 12pt \"MS Shell Dlg 2\";\n"
-"color: rgb(255, 255, 255);")
+                                                       "font: 12pt \"MS Shell Dlg 2\";\n"
+                                                       "color: rgb(255, 255, 255);")
         self.banker_plus_2000_pushButton.setObjectName("banker_plus_2000_pushButton")
         self.banker_plus_3000_pushButton = QtWidgets.QPushButton(parent=self.banker_groupBox)
         self.banker_plus_3000_pushButton.setGeometry(QtCore.QRect(240, 340, 93, 28))
         self.banker_plus_3000_pushButton.setStyleSheet("background-color: rgb(166, 0, 3);\n"
-"font: 12pt \"MS Shell Dlg 2\";\n"
-"color: rgb(255, 255, 255);")
+                                                       "font: 12pt \"MS Shell Dlg 2\";\n"
+                                                       "color: rgb(255, 255, 255);")
         self.banker_plus_3000_pushButton.setObjectName("banker_plus_3000_pushButton")
         self.banker_plus_5000_pushButton = QtWidgets.QPushButton(parent=self.banker_groupBox)
         self.banker_plus_5000_pushButton.setGeometry(QtCore.QRect(460, 340, 93, 28))
         self.banker_plus_5000_pushButton.setStyleSheet("background-color: rgb(166, 0, 3);\n"
-"font: 12pt \"MS Shell Dlg 2\";\n"
-"color: rgb(255, 255, 255);")
+                                                       "font: 12pt \"MS Shell Dlg 2\";\n"
+                                                       "color: rgb(255, 255, 255);")
         self.banker_plus_5000_pushButton.setObjectName("banker_plus_5000_pushButton")
         self.banker_plus_4000_pushButton = QtWidgets.QPushButton(parent=self.banker_groupBox)
         self.banker_plus_4000_pushButton.setGeometry(QtCore.QRect(350, 340, 93, 28))
         self.banker_plus_4000_pushButton.setStyleSheet("background-color: rgb(166, 0, 3);\n"
-"font: 12pt \"MS Shell Dlg 2\";\n"
-"color: rgb(255, 255, 255);")
+                                                       "font: 12pt \"MS Shell Dlg 2\";\n"
+                                                       "color: rgb(255, 255, 255);")
         self.banker_plus_4000_pushButton.setObjectName("banker_plus_4000_pushButton")
         self.player_apply_pushButton = QtWidgets.QPushButton(parent=self.centralwidget)
         self.player_apply_pushButton.setGeometry(QtCore.QRect(530, 640, 191, 81))
         self.player_apply_pushButton.setAutoFillBackground(False)
         self.player_apply_pushButton.setStyleSheet("background-color: rgb(0, 147, 29);\n"
-"font: 16pt \"MS Shell Dlg 2\";\n"
-"color: rgb(255, 255, 255);")
+                                                   "font: 16pt \"MS Shell Dlg 2\";\n"
+                                                   "color: rgb(255, 255, 255);")
         self.player_apply_pushButton.setObjectName("player_apply_pushButton")
         self.player_groupBox = QtWidgets.QGroupBox(parent=self.centralwidget)
         self.player_groupBox.setGeometry(QtCore.QRect(640, 220, 591, 411))
@@ -132,7 +133,7 @@ class Ui_MainWindowExcutable(object):
         font.setWeight(9)
         self.label_8.setFont(font)
         self.label_8.setStyleSheet("color: rgb(10, 176, 37);\n"
-"font: 75 16pt \"MS Shell Dlg 2\";")
+                                   "font: 75 16pt \"MS Shell Dlg 2\";")
         self.label_8.setObjectName("label_8")
         self.label_9 = QtWidgets.QLabel(parent=self.player_groupBox)
         self.label_9.setGeometry(QtCore.QRect(20, 150, 161, 41))
@@ -184,38 +185,33 @@ class Ui_MainWindowExcutable(object):
         self.player_plus_3000_pushButton = QtWidgets.QPushButton(parent=self.player_groupBox)
         self.player_plus_3000_pushButton.setGeometry(QtCore.QRect(250, 340, 93, 28))
         self.player_plus_3000_pushButton.setStyleSheet("background-color: rgb(0, 180, 0);\n"
-"font: 12pt \"MS Shell Dlg 2\";\n"
-"color: rgb(255, 255, 255);")
+                                                       "font: 12pt \"MS Shell Dlg 2\";\n"
+                                                       "color: rgb(255, 255, 255);")
         self.player_plus_3000_pushButton.setObjectName("player_plus_3000_pushButton")
         self.player_plus_1000_pushButton = QtWidgets.QPushButton(parent=self.player_groupBox)
         self.player_plus_1000_pushButton.setGeometry(QtCore.QRect(30, 340, 93, 28))
         self.player_plus_1000_pushButton.setStyleSheet("background-color: rgb(0, 180, 0);\n"
-"font: 12pt \"MS Shell Dlg 2\";\n"
-"color: rgb(255, 255, 255);")
+                                                       "font: 12pt \"MS Shell Dlg 2\";\n"
+                                                       "color: rgb(255, 255, 255);")
         self.player_plus_1000_pushButton.setObjectName("player_plus_1000_pushButton")
         self.player_plus_2000_pushButton = QtWidgets.QPushButton(parent=self.player_groupBox)
         self.player_plus_2000_pushButton.setGeometry(QtCore.QRect(140, 340, 93, 28))
         self.player_plus_2000_pushButton.setStyleSheet("background-color: rgb(0, 180, 0);\n"
-"font: 12pt \"MS Shell Dlg 2\";\n"
-"color: rgb(255, 255, 255);")
+                                                       "font: 12pt \"MS Shell Dlg 2\";\n"
+                                                       "color: rgb(255, 255, 255);")
         self.player_plus_2000_pushButton.setObjectName("player_plus_2000_pushButton")
         self.player_plus_5000_pushButton = QtWidgets.QPushButton(parent=self.player_groupBox)
         self.player_plus_5000_pushButton.setGeometry(QtCore.QRect(470, 340, 93, 28))
         self.player_plus_5000_pushButton.setStyleSheet("background-color: rgb(0, 180, 0);\n"
-"font: 12pt \"MS Shell Dlg 2\";\n"
-"color: rgb(255, 255, 255);")
+                                                       "font: 12pt \"MS Shell Dlg 2\";\n"
+                                                       "color: rgb(255, 255, 255);")
         self.player_plus_5000_pushButton.setObjectName("player_plus_5000_pushButton")
         self.player_plus_4000_pushButton = QtWidgets.QPushButton(parent=self.player_groupBox)
         self.player_plus_4000_pushButton.setGeometry(QtCore.QRect(360, 340, 93, 28))
         self.player_plus_4000_pushButton.setStyleSheet("background-color: rgb(0, 180, 0);\n"
-"font: 12pt \"MS Shell Dlg 2\";\n"
-"color: rgb(255, 255, 255);")
+                                                       "font: 12pt \"MS Shell Dlg 2\";\n"
+                                                       "color: rgb(255, 255, 255);")
         self.player_plus_4000_pushButton.setObjectName("player_plus_4000_pushButton")
-        self.image_label = QtWidgets.QLabel(parent=self.centralwidget)
-        self.image_label.setGeometry(QtCore.QRect(10, 10, 281, 201))
-        self.image_label.setStyleSheet("image: url(:/newPrefix/money.jpg);")
-        self.image_label.setText("")
-        self.image_label.setObjectName("image_label")
         self.lineEdit = QtWidgets.QLineEdit(parent=self.centralwidget)
         self.lineEdit.setGeometry(QtCore.QRect(820, 150, 201, 41))
         self.lineEdit.setObjectName("lineEdit")
@@ -223,6 +219,11 @@ class Ui_MainWindowExcutable(object):
         self.fix_malay_ratio_pushButton.setGeometry(QtCore.QRect(1040, 157, 141, 31))
         self.fix_malay_ratio_pushButton.setStyleSheet("background-color: rgb(61, 227, 49);")
         self.fix_malay_ratio_pushButton.setObjectName("fix_malay_ratio_pushButton")
+        self.label_image = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label_image.setGeometry(QtCore.QRect(20, 10, 251, 191))
+        self.label_image.setStyleSheet("background-image: url(:/newPrefix/money.jpg);")
+        self.label_image.setText("")
+        self.label_image.setObjectName("label_image")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1253, 26))
@@ -281,13 +282,16 @@ class Ui_MainWindowExcutable(object):
 
     def fix_ratios(self):
         max_money = int(self.lineEdit.text())
-        malay_ratio_value = float(self.player_malay_value_followHK_label.text())
-        betRate_difference = int(self.betRate_banker_player_Edit.text()) - int(self.betRate_banker_Edit.text())
+        player_ratio_value = float(self.player_malay_value_followHK_label.text())
+        banker_ratio_value = float(self.malay_value_followHK_label.text())
+
+        betRate_difference = abs(int(self.betRate_banker_player_Edit.text()) - int(self.betRate_banker_Edit.text()))
         ratio_fix = (betRate_difference / max_money) * 0.01
-        fixed = malay_ratio_value - ratio_fix
+        fixed = player_ratio_value - ratio_fix
         self.player_malay_value_followHK_label.setText(str(float(fixed)))
 
     def retranslateUi(self, MainWindow):
+        # region
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label_20.setText(_translate("MainWindow", "MAX $ SIZE:"))
@@ -319,6 +323,7 @@ class Ui_MainWindowExcutable(object):
         self.player_plus_5000_pushButton.setText(_translate("MainWindow", "5000 $"))
         self.player_plus_4000_pushButton.setText(_translate("MainWindow", "4000 $"))
         self.fix_malay_ratio_pushButton.setText(_translate("MainWindow", "Config Malaysia ratio"))
+        # endregion
 
 
 if __name__ == "__main__":
