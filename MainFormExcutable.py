@@ -6,6 +6,7 @@ class Ui_MainWindowExcutable(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1253, 783)
+        #region UI clearance
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label_20 = QtWidgets.QLabel(parent=self.centralwidget)
@@ -232,7 +233,7 @@ class Ui_MainWindowExcutable(object):
         self.statusbar = QtWidgets.QStatusBar(parent=MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
-
+        #endregion
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
@@ -288,6 +289,7 @@ class Ui_MainWindowExcutable(object):
         betRate_difference = abs(int(self.betRate_banker_player_Edit.text()) - int(self.betRate_banker_Edit.text()))
         ratio_fix = (betRate_difference / max_money) * 0.01
         fixed = player_ratio_value - ratio_fix
+
         self.player_malay_value_followHK_label.setText(str(float(fixed)))
 
     def retranslateUi(self, MainWindow):
