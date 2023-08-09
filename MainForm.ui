@@ -650,20 +650,24 @@ color: rgb(255, 255, 255);</string>
      <string>Config Malaysia ratio</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_image">
+   <widget class="QLineEdit" name="lineEdit_2">
     <property name="geometry">
      <rect>
       <x>20</x>
       <y>10</y>
-      <width>251</width>
-      <height>191</height>
+      <width>381</width>
+      <height>161</height>
      </rect>
     </property>
+    <property name="whatsThis">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:72pt; font-weight:600; color:#c10000;&quot;&gt;DGV&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
     <property name="styleSheet">
-     <string notr="true">background-image: url(:/newPrefix/money.jpg);</string>
+     <string notr="true">font: 75 72pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(134, 27, 13);</string>
     </property>
     <property name="text">
-     <string/>
+     <string>DGV99</string>
     </property>
    </widget>
   </widget>
@@ -680,7 +684,7 @@ color: rgb(255, 255, 255);</string>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="resource.qrc"/>
+  <include location="resources.qrc"/>
  </resources>
  <connections/>
 </ui>
